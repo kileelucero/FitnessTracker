@@ -12,8 +12,8 @@ router.get("/api/workouts", (req, res) => {
       });
   });
 
-  router.post("/api/workouts", (req, res) => {
-    Workout.create({})
+  router.post("/api/workouts", ({ body }, res) => {
+    Workout.create(body)
       .then(dbWorkout => {
         res.json(dbWorkout);
       })
