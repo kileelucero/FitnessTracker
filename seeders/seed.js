@@ -109,11 +109,11 @@ let workoutSeed = [{
   }
 ];
 
-db.Workout.create(workoutSeed).then(data => {
-  console.log(data);
-}).catch((err) => {
-  console.log(err);
-});
+// db.Workout.create(workoutSeed).then(data => {
+//   console.log(data);
+// }).catch((err) => {
+//   console.log(err);
+// });
 
 db.Workout.deleteMany({})
   .then(() => db.Workout.collection.insertMany(workoutSeed))
@@ -125,3 +125,4 @@ db.Workout.deleteMany({})
     console.error(err);
     process.exit(1);
   });
+  console.log("sanity");
